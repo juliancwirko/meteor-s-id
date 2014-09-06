@@ -1,6 +1,6 @@
 Package.describe({
   summary: 'Simple accounts for Meteor. Especially for Scotty boilerplate.',
-  version: '0.0.1',
+  version: '0.0.2',
   name: 'juliancwirko:s-id',
   git: 'https://github.com/juliancwirko/meteor-s-id.git'
 });

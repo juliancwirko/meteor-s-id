@@ -33,6 +33,13 @@ Template.registerView.events({
                         position: 'left-top'
                     });
                     Router.go(scottyId.settings.redirectPage);
+                } else {
+                    Session.set('sAlert', {
+                        condition: 'red',
+                        effect: 'stackslide',
+                        message: 'Something went wrong! -' + err,
+                        position: 'left-top'
+                    });
                 }
             });
         } else {
