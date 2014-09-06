@@ -2,7 +2,7 @@ Package.describe({
   summary: 'Simple accounts for Meteor. Especially for Scotty boilerplate.',
   version: '0.0.1',
   name: 'juliancwirko:s-id',
-  // git: 'https://github.com/juliancwirko/meteor-s-jeet.git'
+  git: 'https://github.com/juliancwirko/meteor-s-id.git'
 });
 
 Package.onUse(function(api) {
@@ -30,14 +30,14 @@ Package.onUse(function(api) {
     ], ['client', 'server']);
 
     api.addFiles([
-        'client/views/forgot_password_view.html',
-        'client/views/forgot_password_view.js',
-        'client/views/reset_password_view.html',
-        'client/views/reset_password_view.js',
-        'client/views/login_view.html',
-        'client/views/login_view.js',
-        'client/views/register_view.html',
-        'client/views/register_view.js'
+        'client/forgot_password_view.html',
+        'client/forgot_password_view.js',
+        'client/reset_password_view.html',
+        'client/reset_password_view.js',
+        'client/login_view.html',
+        'client/login_view.js',
+        'client/register_view.html',
+        'client/register_view.js'
     ], 'client');
 
     api.addFiles([
