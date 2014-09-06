@@ -1,0 +1,20 @@
+<template name="registerView">
+    <div class="{{scottyIdRegisterClass}}">
+        <h2>{{scottyIdRegisterTitle}}</h2>
+        <p>{{scottyIdRegisterLeadText}}</p>
+        <form id="register-form" action="action">
+            <div>
+                <input type="text" required id="s-id-register-username" placeholder="Username">
+            </div>
+            <div>
+                <input type="email" required id="s-id-register-email" placeholder="E-mail">
+            </div>
+            <div>
+                <input type="password" required id="s-id-register-password" placeholder="Password">
+            </div>
+            <div>
+                <button type="submit" id="s-id-register-button">{{scottyIdRegisterBtnLabel}}</button>
+            </div>
+        </form>
+    </div>
+</template>
