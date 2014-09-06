@@ -6,6 +6,18 @@ This is a simple and custom Accounts system because we don't need any complicate
 
 ### Usage
 
+Just add package:
+````
+meteor add juliancwirko:s-id
+````
+You will get four working routes (Iron Router):
+- **/login** [Iron Router route name: 'login.view']
+- **/register** [Iron Router route name: 'register.view']
+- **/forgot-password** [Iron Router route name: 'forgot.password.view']
+- **/reset-password/:resetToken** [Iron Router route name: 'reset.password']
+- 
+You can also use config.
+
 Full Config (all is optional and here you can overwrite defaults) [client, server]:
 ````
 Meteor.startup(function () {
@@ -49,16 +61,11 @@ You can then use (somewhere in your templates):
 ````
 Logout event by Meteor.logout() - see docs.meteor.com
 
-### Routes
-
-- **/login** [Iron Router route name: 'login.view']
-- **/register** [Iron Router route name: 'register.view']
-- **/forgot-password** [Iron Router route name: 'forgot.password.view']
-- **/reset-password/:resetToken** [Iron Router route name: 'reset.password']
-
 ### Styling
 
 There will be more customization in the future. For now you can use mainClass as a namespace for DOM elements which has its own ids and classes.
+
+It is also integrated with [s-alert](https://github.com/juliancwirko/meteor-s-alert) notifications
 
 ### Sending Emails
 
