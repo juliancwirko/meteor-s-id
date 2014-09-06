@@ -15,7 +15,7 @@ You will get four working routes (Iron Router):
 - **/register** [Iron Router route name: 'register.view']
 - **/forgot-password** [Iron Router route name: 'forgot.password.view']
 - **/reset-password/:resetToken** [Iron Router route name: 'reset.password']
-- 
+
 You can also use config.
 
 Full Config (all is optional and here you can overwrite defaults) [client, server]:
