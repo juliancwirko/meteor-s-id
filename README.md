@@ -4,6 +4,11 @@ Simple Accounts system for Meteor. Especially for [Scotty](https://github.com/ju
 
 This is a simple and custom Accounts system because we don't need any complicated logic and Bootstrap classes here.. but if you want something more complex try: [AccountsEntry](https://github.com/Differential/accounts-entry) by Differential (cool stuff from cool guys).
 
+### Demo
+
+Forms are unstyled like in the package..
+[s-id-demo.meteor.com](http://s-id-demo.meteor.com/)
+
 ### Usage
 
 Just add package:
