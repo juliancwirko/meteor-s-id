@@ -1,0 +1,131 @@
+.s-id-register-form,
+.s-id-login-form,
+.s-id-reset-password-form,
+.s-id-forgot-password-form {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    background: #fff;
+    padding: 30px 50px 60px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.s-id-register-form input,
+.s-id-login-form input,
+.s-id-reset-password-form input,
+.s-id-forgot-password-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cdcdcd;
+    margin-bottom: 5px;
+    outline: none;
+    -webkit-transition: border .3s;
+    transition: border .3s;
+}
+
+.s-id-register-form input:focus,
+.s-id-login-form input:focus,
+.s-id-reset-password-form input:focus,
+.s-id-forgot-password-form input:focus {
+    border-left: 8px solid #cdcdcd;
+    outline: none;
+}
+
+.s-id-register-form h2,
+.s-id-login-form h2,
+.s-id-reset-password-form h2,
+.s-id-forgot-password-form h2 {
+    margin-top: 15px;
+    font-size: 36px;
+}
+
+.s-id-register-form button[type=submit],
+.s-id-login-form button[type=submit],
+.s-id-reset-password-form button[type=submit],
+.s-id-forgot-password-form button[type=submit] {
+    padding: 10px 30px;
+    background-color: #54B66A;
+    color: #fff;
+    text-transform: uppercase;
+    border: 0;
+    font-weight: bold;
+    -webkit-transition: background-color .5s;
+    transition: background-color .5s;
+    cursor: pointer;
+    width: 60%;
+    display: block;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.s-id-register-form button[type=submit]:hover,
+.s-id-login-form button[type=submit]:hover,
+.s-id-reset-password-form button[type=submit]:hover,
+.s-id-forgot-password-form button[type=submit]:hover{
+    background-color: #4aa15e;
+}
+
+.s-id-register-form .social-buttons-block,
+.s-id-login-form .social-buttons-block,
+.s-id-reset-password-form .social-buttons-block,
+.s-id-forgot-password-form .social-buttons-block{
+    margin-top: 35px;
+    text-align: center;
+}
+
+.s-id-github-btn,
+.s-id-google-btn,
+.s-id-twitter-btn {
+    padding: 10px 30px;
+    width: 60%;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-transition: background-color .5s;
+    transition: background-color .5s;
+    margin-bottom: 5px;
+    border: 0;
+}
+
+.s-id-github-btn {
+    background-color: #F5F5F5;
+}
+.s-id-github-btn:hover {
+    background-color: #c9c9c9;
+}
+.s-id-twitter-btn {
+    background-color: #00ACEE;
+    color: #fff;
+}
+.s-id-twitter-btn:hover {
+    background-color: #009bd6;
+}
+.s-id-google-btn {
+    background-color: #D73D32;
+    color: #fff;
+}
+.s-id-google-btn:hover {
+    background-color: #c2372d;
+}
+
+.s-id-req-new-pass-link-container {
+    text-align: center;
+}
+.s-id-req-new-pass-link-container a {
+    color: #424242;
+    font-size: 13px;
+}
+
+
+.s-id-clearfix:before,
+.s-id-clearfix:after {
+    content: " ";
+    display: table;
+}
+.s-id-clearfix:before {
+    clear: both;
+}

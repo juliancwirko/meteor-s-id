@@ -6,7 +6,17 @@ scottyId = {
         registerForm: {},
         loginForm: {},
         forgotPassForm: {},
-        resetPassForm: {}
+        resetPassForm: {},
+        socialButtons: {
+            'github': true,
+            'google': true,
+            'twitter': true,
+            'labels': {
+                'github': 'GitHub Access',
+                'google': 'Google Access',
+                'twitter': 'Twitter Access'
+            }
+        }
     },
     config: function (configObj) {
         if (_.isObject(configObj)) {

@@ -1,16 +1,16 @@
 Package.describe({
   summary: 'Simple accounts for Meteor. Especially for Scotty boilerplate.',
-  version: '0.0.2',
+  version: '0.1.0',
   name: 'juliancwirko:s-id',
   git: 'https://github.com/juliancwirko/meteor-s-id.git'
 });
 
 Package.onUse(function(api) {
-    api.use('templating@1.0.0');
-    api.use('ui@1.0.0');
+    api.use('templating@1.0.9');
+    api.use('ui@1.0.4');
 
     api.use([
-      'jquery@1.0.0',
+      'jquery@1.0.1',
       'juliancwirko:s-alert@0.0.3'
     ], ['client']);
 
@@ -19,17 +19,30 @@ Package.onUse(function(api) {
     ], ['client']);
 
     api.use([
-      'underscore@1.0.0',
-      'accounts-base@1.0.1',
-      'iron:router@0.9.3'
+      'underscore@1.0.1',
+      'accounts-base@1.1.2',
+      'service-configuration@1.0.2',
+      'accounts-password@1.0.4',
+      'accounts-github@1.0.2',
+      'accounts-google@1.0.2',
+      'accounts-twitter@1.0.2',
+      'iron:router@1.0.0',
     ], ['client', 'server']);
 
     api.imply([
-      'accounts-base@1.0.1',
-      'iron:router@0.9.3'
+      'accounts-base@1.1.2',
+      'service-configuration@1.0.2',
+      'accounts-password@1.0.4',
+      'accounts-github@1.0.2',
+      'accounts-google@1.0.2',
+      'accounts-twitter@1.0.2',
+      'iron:router@1.0.0',
     ], ['client', 'server']);
 
     api.addFiles([
+        'client/style.css',
+        'client/social-buttons.html',
+        'client/social-buttons.js',
         'client/forgot_password_view.html',
         'client/forgot_password_view.js',
         'client/reset_password_view.html',
@@ -46,6 +59,7 @@ Package.onUse(function(api) {
     ], ['client', 'server']);
 
     api.addFiles([
+        'server/service-config.js',
         'server/accounts-config.js'
     ], 'server');
 

@@ -1,0 +1,22 @@
+<template name="socialButtons">
+    {{#with scottyIdSocialBtns}}
+        <div class="s-id-clearfix"></div>
+        <div class="social-buttons-block">
+            {{#if google}}
+                <div>
+                    <button id="s-id-buttons-google" class="s-id-google-btn">{{googleBtnLabel}}</button>
+                </div>
+            {{/if}}
+            {{#if twitter}}
+                <div>
+                    <button id="s-id-buttons-twitter" class="s-id-twitter-btn">{{twitterBtnLabel}}</button>
+                </div>
+            {{/if}}
+            {{#if github}}
+                <div>
+                    <button id="s-id-buttons-github" class="s-id-github-btn">{{githubBtnLabel}}</button>
+                </div>
+            {{/if}}
+        </div>
+    {{/with}}
+</template>
