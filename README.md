@@ -12,9 +12,9 @@ This is a simple and custom Accounts system because we don't need any complicate
 ### Usage
 
 Just add the package:
-````
-meteor add juliancwirko:s-id
-````
+
+    meteor add juliancwirko:s-id
+
 You will get four working routes (Iron Router):
 
 - **/login** [Iron Router route name: 'login.view'] example: [Login page](http://s-id-demo.meteor.com/login)
@@ -25,56 +25,56 @@ You will get four working routes (Iron Router):
 You can also use config.
 
 Full Config (all is optional and here you can overwrite defaults) [on client and server - example: common/users-config.js]:
-````
-Meteor.startup(function () {
-    scottyId.config({
-        redirectPage: '/',
-        registerForm: {
-            mainClass: 's-id-register-form', // css class for main container
-            title: 'Register', // form title
-            leadText: 'Hi, join us!', // form description text
-            submitBtnLabel: 'Register' // button label text
-        },
-        loginForm: {
-            mainClass: 's-id-login-form',
-            title: 'Login',
-            leadText: 'Beam me up, Scotty!',
-            submitBtnLabel: 'Login'
-        },
-        forgotPassForm: {
-            mainClass: 's-id-forgot-password-form',
-            title: 'Forgot Password',
-            leadText: 'Please fill in email address!',
-            submitBtnLabel: 'Send New!'
-        },
-        resetPassForm: {
-            mainClass: 's-id-reset-password-form',
-            title: 'Reset Password',
-            leadText: 'Please fill in new password!',
-            submitBtnLabel: 'Set New!'
-        },
-        socialButtons: { // disable/enable social login/register buttons
-            'github': true,
-            'google': true,
-            'twitter': true,
-            'labels': { // labels for social buttons
-                'github': 'GitHub Access',
-                'google': 'Google Access',
-                'twitter': 'Twitter Access'
+
+    Meteor.startup(function () {
+        scottyId.config({
+            redirectPage: '/',
+            registerForm: {
+                mainClass: 's-id-register-form', // css class for main container
+                title: 'Register', // form title
+                leadText: 'Hi, join us!', // form description text
+                submitBtnLabel: 'Register' // button label text
+            },
+            loginForm: {
+                mainClass: 's-id-login-form',
+                title: 'Login',
+                leadText: 'Beam me up, Scotty!',
+                submitBtnLabel: 'Login'
+            },
+            forgotPassForm: {
+                mainClass: 's-id-forgot-password-form',
+                title: 'Forgot Password',
+                leadText: 'Please fill in email address!',
+                submitBtnLabel: 'Send New!'
+            },
+            resetPassForm: {
+                mainClass: 's-id-reset-password-form',
+                title: 'Reset Password',
+                leadText: 'Please fill in new password!',
+                submitBtnLabel: 'Set New!'
+            },
+            socialButtons: { // disable/enable social login/register buttons
+                'github': true,
+                'google': true,
+                'twitter': true,
+                'labels': { // labels for social buttons
+                    'github': 'GitHub Access',
+                    'google': 'Google Access',
+                    'twitter': 'Twitter Access'
+                }
             }
-        }
+        });
     });
-});
-````
+
 You can then use (somewhere in your templates):
-````
-{{#if currentUser}}
-    <a href="#" class="js-logout">Logout</a></li>
-{{else}}
-    <a href="{{pathFor 'login.view'}}">Login</a>
-    <a href="{{pathFor 'register.view'}}">Register</a>
-{{/if}}
-````
+
+    {{#if currentUser}}
+        <a href="#" class="js-logout">Logout</a></li>
+    {{else}}
+        <a href="{{pathFor 'login.view'}}">Login</a>
+        <a href="{{pathFor 'register.view'}}">Register</a>
+    {{/if}}
+
 Logout event by Meteor.logout() - see docs.meteor.com
 
 ### Log the user in using an external service
@@ -85,22 +85,22 @@ If you want to use social buttons (enabled by default) You have to setup your se
 
 Example (settings.json in your app root folder):
 
-````
-{
-    "github": {
-        "clientId": "{your github API client id here}",
-        "secret": "{your google API secret key here}"
-    },
-    "google": {
-        "clientId": "{your google API client id here}",
-        "secret": "{your google API secret key here}"
-    },
-    "twitter": {
-        "consumerKey": "{your twitter API customer key here}",
-        "secret": "{your twitter API secret key here}"
+
+    {
+        "github": {
+            "clientId": "{your github API client id here}",
+            "secret": "{your google API secret key here}"
+        },
+        "google": {
+            "clientId": "{your google API client id here}",
+            "secret": "{your google API secret key here}"
+        },
+        "twitter": {
+            "consumerKey": "{your twitter API customer key here}",
+            "secret": "{your twitter API secret key here}"
+        }
     }
-}
-````
+
 You can generate your API keys on these sites:
 
 - [Google API](https://console.developers.google.com)
@@ -120,39 +120,39 @@ If you want to transform data in your user collection you can use ````Accounts.o
 
 Example:
 
-````
-Accounts.onCreateUser(function (options, user) {
-    if (user.services.github) {
 
-        user.username = user.services.github.username;
-        user.emails = [];
-        user.emails.push({
-            address: user.services.github.email,
-            verified: true
-        });
+    Accounts.onCreateUser(function (options, user) {
+        if (user.services.github) {
+
+            user.username = user.services.github.username;
+            user.emails = [];
+            user.emails.push({
+                address: user.services.github.email,
+                verified: true
+            });
+
+            return user;
+        }
+
+        if (user.services.google) {
+
+            user.username = user.services.google.email;
+            user.emails = [];
+            user.emails.push({
+                address: user.services.google.email,
+                verified: true
+            });
+
+            return user;
+        }
+
+        if (user.services.twitter) {
+            // your transforms
+        }
 
         return user;
-    }
+    });
 
-    if (user.services.google) {
-
-        user.username = user.services.google.email;
-        user.emails = [];
-        user.emails.push({
-            address: user.services.google.email,
-            verified: true
-        });
-
-        return user;
-    }
-
-    if (user.services.twitter) {
-        // your transforms
-    }
-
-    return user;
-});
-````
 
 ### Styling
 
@@ -168,11 +168,11 @@ You can configure Mailgun with Meteor. It is very simple. If you will deploy on 
 
 Example:
 
-````
-Meteor.startup(function () {
-    process.env.MAIL_URL = 'smtp://postmaster@{your-data}.mailgun.org:{your-data}@smtp.mailgun.org:587';
-});
-````
+
+    Meteor.startup(function () {
+        process.env.MAIL_URL = 'smtp://postmaster@{your-data}.mailgun.org:{your-data}@smtp.mailgun.org:587';
+    });
+
 
 ### TODO
 
