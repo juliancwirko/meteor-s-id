@@ -21,19 +21,9 @@ Template.resetPassword.events({
         if (token && password) {
             Accounts.resetPassword(token, password, function(err) {
                 if (err) {
-                    Session.set('sAlert', {
-                        condition: 'red',
-                        effect: 'stackslide',
-                        message: 'Something went wrong! -' + err,
-                        position: 'left-top'
-                    });
+                    sAlert.error('Something went wrong! -' + err);
                 } else {
-                    Session.set('sAlert', {
-                        condition: 'green',
-                        effect: 'stackslide',
-                        message: 'Your password has been changed. Welcome back!',
-                        position: 'left-top'
-                    });
+                    sAlert.success('Your password has been changed. Welcome back!');
                 }
             });
             Router.go('/');

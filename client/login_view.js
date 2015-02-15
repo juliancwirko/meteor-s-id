@@ -20,19 +20,9 @@ Template.loginView.events({
             password = tmpl.$('#s-id-login-password').val();
         Meteor.loginWithPassword(user, password, function (err) {
             if (err) {
-                Session.set('sAlert', {
-                    condition: 'red',
-                    effect: 'stackslide',
-                    message: 'Something went wrong! -' + err,
-                    position: 'left-top'
-                });
+                sAlert.error('Something went wrong! -' + err);
             } else {
-                Session.set('sAlert', {
-                    condition: 'green',
-                    effect: 'stackslide',
-                    message: 'Logged in!',
-                    position: 'left-top'
-                });
+                sAlert.success('Logged in!');
                 Router.go(scottyId.settings.redirectPage);
             }
         });

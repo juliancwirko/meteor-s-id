@@ -26,29 +26,14 @@ Template.registerView.events({
                 password: password
             }, function (err, result) {
                 if (!err) {
-                    Session.set('sAlert', {
-                        condition: 'green',
-                        effect: 'stackslide',
-                        message: 'Your account has been created! You have been logged in!',
-                        position: 'left-top'
-                    });
+                    sAlert.success('Your account has been created! You have been logged in!');
                     Router.go(scottyId.settings.redirectPage);
                 } else {
-                    Session.set('sAlert', {
-                        condition: 'red',
-                        effect: 'stackslide',
-                        message: 'Something went wrong! -' + err,
-                        position: 'left-top'
-                    });
+                    sAlert.error('Something went wrong! -' + err);
                 }
             });
         } else {
-            Session.set('sAlert', {
-                condition: 'red',
-                effect: 'stackslide',
-                message: 'Fill in all fields!',
-                position: 'left-top'
-            });
+            sAlert.error('Fill in all fields!');
         }
     }
 });

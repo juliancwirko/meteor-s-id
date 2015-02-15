@@ -1,6 +1,6 @@
 Package.describe({
   summary: 'Simple accounts for Meteor. Especially for Scotty boilerplate.',
-  version: '0.1.0',
+  version: '0.1.1',
   name: 'juliancwirko:s-id',
   git: 'https://github.com/juliancwirko/meteor-s-id.git'
 });
@@ -11,11 +11,11 @@ Package.onUse(function(api) {
 
     api.use([
       'jquery@1.0.1',
-      'juliancwirko:s-alert@0.0.3'
+      'juliancwirko:s-alert@1.0.0'
     ], ['client']);
 
     api.imply([
-      'juliancwirko:s-alert@0.0.3'
+      'juliancwirko:s-alert@1.0.0'
     ], ['client']);
 
     api.use([

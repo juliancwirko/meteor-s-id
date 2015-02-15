@@ -20,19 +20,9 @@ Template.forgotPasswordView.events({
         if (email) {
             Accounts.forgotPassword({email: email}, function (err) {
                 if (err) {
-                    Session.set('sAlert', {
-                        condition: 'red',
-                        effect: 'stackslide',
-                        message: 'Something went wrong! -' + err,
-                        position: 'left-top'
-                    });
+                    sAlert.error('Something went wrong! -' + err);
                 } else {
-                    Session.set('sAlert', {
-                        condition: 'green',
-                        effect: 'stackslide',
-                        message: 'Email Sent. Check your mailbox.',
-                        position: 'left-top'
-                    });
+                    sAlert.success('Email Sent. Check your mailbox.');
                 }
             });
             Router.go('login.view');
