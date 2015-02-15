@@ -1,6 +1,6 @@
 Package.describe({
-  summary: 'Simple accounts for Meteor. Especially for Scotty boilerplate.',
-  version: '0.1.1',
+  summary: 'Simple accounts for Meteor.',
+  version: '0.1.2',
   name: 'juliancwirko:s-id',
   git: 'https://github.com/juliancwirko/meteor-s-id.git'
 });
@@ -40,6 +40,7 @@ Package.onUse(function(api) {
     ], ['client', 'server']);
 
     api.addFiles([
+        'client/s-alert-config.js',
         'client/style.css',
         'client/social-buttons.html',
         'client/social-buttons.js',

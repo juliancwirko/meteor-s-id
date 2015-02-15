@@ -35,7 +35,7 @@ iron:url@1.0.7
 jquery@1.11.3
 json@1.0.2
 juliancwirko:s-alert@1.0.0
-juliancwirko:s-id@0.1.1
+juliancwirko:s-id@0.1.2
 localstorage@1.0.2
 logging@1.0.6
 meteor@1.1.4
