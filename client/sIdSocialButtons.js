@@ -1,4 +1,6 @@
-Template.socialButtons.events({
+'use strict';
+
+Template.sIdSocialButtons.events({
     'click #s-id-buttons-github': function (e) {
         e.preventDefault();
         Meteor.loginWithGithub({
@@ -20,17 +22,17 @@ Template.socialButtons.events({
     }
 });
 
-Template.socialButtons.helpers({
-    scottyIdSocialBtns: function () {
-        return scottyId.settings.socialButtons;
+Template.sIdSocialButtons.helpers({
+    sIdSocialBtns: function () {
+        return sId.settings.socialButtons;
     },
     googleBtnLabel: function () {
-        return scottyId.settings.socialButtons.labels.google || 'Google Access';
+        return sId.settings.socialButtons.labels.google || 'Google Access';
     },
     twitterBtnLabel: function () {
-        return scottyId.settings.socialButtons.labels.twitter || 'Twitter Access';
+        return sId.settings.socialButtons.labels.twitter || 'Twitter Access';
     },
     githubBtnLabel: function () {
-        return scottyId.settings.socialButtons.labels.github || 'GitHub Access';
+        return sId.settings.socialButtons.labels.github || 'GitHub Access';
     }
 });

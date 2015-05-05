@@ -1,3 +1,4 @@
+'use strict';
 
 if (typeof Meteor.settings !== 'undefined' && !_.isEmpty(Meteor.settings)) {
 

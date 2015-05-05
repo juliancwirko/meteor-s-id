@@ -1,7 +1,7 @@
-<template name="loginView">
-    <div class="{{scottyIdLoginClass}}">
-        <h2>{{scottyIdLoginTitle}}</h2>
-        <p>{{scottyIdLoginLeadText}}</p>
+<template name="sIdLoginView">
+    <div class="{{sIdLoginClass}}">
+        <h2>{{sIdLoginTitle}}</h2>
+        <p>{{sIdLoginLeadText}}</p>
         <form id="login-form" action="action">
             <div>
                 <input type="text" required id="s-id-login-username" placeholder="Username">
@@ -10,13 +10,13 @@
                 <input type="password" required id="s-id-login-password" placeholder="Password">
             </div>
             <div>
-                <button type="submit" id="s-id-login-button">{{scottyIdLoginBtnLabel}}</button>
+                <button type="submit" id="s-id-login-button">{{sIdLoginBtnLabel}}</button>
             </div>
-            {{> socialButtons}}
+            {{> sIdSocialButtons}}
         </form>
         <div class="s-id-req-new-pass-link-container">
             <p>
-                <a href="{{pathFor 'forgot.password.view'}}">Request new password!</a>
+                <a href="{{pathFor 'sIdForgotPasswordView'}}">Request new password!</a>
             </p>
         </div>
     </div>

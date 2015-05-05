@@ -1,7 +1,7 @@
-<template name="registerView">
-    <div class="{{scottyIdRegisterClass}}">
-        <h2>{{scottyIdRegisterTitle}}</h2>
-        <p>{{scottyIdRegisterLeadText}}</p>
+<template name="sIdRegisterView">
+    <div class="{{sIdRegisterClass}}">
+        <h2>{{sIdRegisterTitle}}</h2>
+        <p>{{sIdRegisterLeadText}}</p>
         <form id="register-form" action="action">
             <div>
                 <input type="text" required id="s-id-register-username" placeholder="Username">
@@ -13,9 +13,9 @@
                 <input type="password" required id="s-id-register-password" placeholder="Password">
             </div>
             <div>
-                <button type="submit" id="s-id-register-button">{{scottyIdRegisterBtnLabel}}</button>
+                <button type="submit" id="s-id-register-button">{{sIdRegisterBtnLabel}}</button>
             </div>
-            {{> socialButtons}}
+            {{> sIdSocialButtons}}
         </form>
     </div>
 </template>
