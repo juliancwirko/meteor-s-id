@@ -7,7 +7,12 @@ This is a simple and custom Accounts system because we don't need any complicate
 ### Demo
 
 (With minimal styling, but you can do this very simple by adding your own css classes)
+
 [s-id-demo.meteor.com](http://s-id-demo.meteor.com/)
+
+### Website:
+
+[s-id.meteor.com](http://s-id.meteor.com/)
 
 ### Usage
 
