@@ -230,6 +230,8 @@ It should be simple to adjust it for FlowRouter and any other router for Meteor.
 
 ### Changelog
 
+- v1.0.1 fix onLogged() callback with external services like Google etc.
+
 - v1.0.0 is not depended on Iron Router anymore. You should use templates and make your own routes (example above). You can use onLogged, onRegistered, onForgotPassword, onResetPassword callbacks in config to make (for example) redirections.
 
 

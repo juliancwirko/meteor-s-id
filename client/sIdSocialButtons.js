@@ -5,6 +5,12 @@ Template.sIdSocialButtons.events({
         e.preventDefault();
         Meteor.loginWithGithub({
             requestPermissions: ['user']
+        }, function (err) {
+            if (err) {
+                sAlert.error('Something went wrong! -' + err);
+            } else {
+                sId.settings.onLogged();
+            }
         });
     },
     'click #s-id-buttons-google': function (e) {
@@ -14,11 +20,23 @@ Template.sIdSocialButtons.events({
                 'https://www.googleapis.com/auth/userinfo.profile',
                 'https://www.googleapis.com/auth/userinfo.email'
             ]
+        }, function (err) {
+            if (err) {
+                sAlert.error('Something went wrong! -' + err);
+            } else {
+                sId.settings.onLogged();
+            }
         });
     },
     'click #s-id-buttons-twitter': function (e) {
         e.preventDefault();
-        Meteor.loginWithTwitter();
+        Meteor.loginWithTwitter({}, function (err) {
+            if (err) {
+                sAlert.error('Something went wrong! -' + err);
+            } else {
+                sId.settings.onLogged();
+            }
+        });
     }
 });
 
