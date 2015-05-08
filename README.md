@@ -87,7 +87,10 @@ Meteor.startup(function () {
             // you should have configured route: '/reset-password/:resetToken',
             // then with Iron Router you can do something like:
             //
-            // return Router.current().params.resetToken;
+            // With Iron Router
+            // return Router.current().params.resetToken; or with Flow Router
+            // or with Flow Router
+            // return FlowRouter.getParam('resetToken');
         }
     });
 });
@@ -99,8 +102,8 @@ You can then use (somewhere in your templates):
 {{#if currentUser}}
     <a href="#" class="js-logout">Logout</a></li>
 {{else}}
-    <a href="{{pathFor 'sIdLoginView'}}">Login</a>
-    <a href="{{pathFor 'sIdRegisterView'}}">Register</a>
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
 {{/if}}
 ```
 
@@ -226,9 +229,40 @@ Router.map(function() {
 });
 ```
 
-It should be simple to adjust it for FlowRouter and any other router for Meteor. Basicaly you just use ready to go templates from the package and some callbacks which you can configure.
+### Example routes which you can use in your app (Flow Router and Flow Layout example)
+
+```javascript
+FlowRouter.route('/login', {
+    name: 'sIdLoginView',
+    action: function () {
+        FlowLayout.render('layout', {main: 'sIdLoginView'});
+    }
+});
+FlowRouter.route('/register', {
+    name: 'sIdRegisterView',
+    action: function () {
+        FlowLayout.render('layout', {main: 'sIdRegisterView'});
+    }
+});
+FlowRouter.route('/forgot-password', {
+    name: 'sIdForgotPasswordView',
+    action: function () {
+        FlowLayout.render('layout', {main: 'sIdForgotPasswordView'});
+    }
+});
+FlowRouter.route('/reset-password', {
+    name: 'sIdResetPasswordView',
+    action: function () {
+        FlowLayout.render('layout', {main: 'sIdResetPasswordView'});
+    }
+});
+```
+
+Basicaly you just use ready to go templates from the package and some callbacks which you can configure.
 
 ### Changelog
+
+- v1.0.2 fix forgot password link usage
 
 - v1.0.1 fix onLogged() callback with external services like Google etc.
 
