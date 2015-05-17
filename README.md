@@ -18,6 +18,7 @@ This is a simple and custom Accounts system because we don't need any complicate
 
 - [config file](https://github.com/juliancwirko/scotty/blob/master/common/settings/users-accounts-config.js)
 - [routes](https://github.com/juliancwirko/scotty/blob/master/common/router/routes.js)
+- [login theme included in secret page - example](https://github.com/juliancwirko/scotty/blob/master/client/views/secret-page/secret-page.html)
 - [Scotty boilerplate](https://github.com/juliancwirko/scotty)
 
 ### Usage
