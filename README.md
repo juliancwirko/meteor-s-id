@@ -14,6 +14,12 @@ This is a simple and custom Accounts system because we don't need any complicate
 
 [s-id.meteor.com](http://s-id.meteor.com/)
 
+### Usage example in Scotty boilerplate
+
+- [config file](https://github.com/juliancwirko/scotty/blob/master/common/settings/users-accounts-config.js)
+- [routes](https://github.com/juliancwirko/scotty/blob/master/common/router/routes.js)
+- [Scotty boilerplate](https://github.com/juliancwirko/scotty)
+
 ### Usage
 
 Just add the package:
