@@ -1,6 +1,18 @@
 'use strict';
 
 Template.sIdSocialButtons.events({
+    'click #s-id-buttons-facebook': function (e) {
+        e.preventDefault();
+        Meteor.loginWithFacebook({
+            requestPermissions: ['public_profile,email']
+        }, function (err) {
+            if (err) {
+                sAlert.error('Something went wrong! -' + err);
+            } else {
+                sId.settings.onLogged();
+            }
+        });
+    },
     'click #s-id-buttons-github': function (e) {
         e.preventDefault();
         Meteor.loginWithGithub({
@@ -43,6 +55,9 @@ Template.sIdSocialButtons.events({
 Template.sIdSocialButtons.helpers({
     sIdSocialBtns: function () {
         return sId.settings.socialButtons;
+    },
+    facebookBtnLabel: function () {
+        return sId.settings.socialButtons.labels.facebook || 'Facebook Access';
     },
     googleBtnLabel: function () {
         return sId.settings.socialButtons.labels.google || 'Google Access';

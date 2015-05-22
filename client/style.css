@@ -79,7 +79,8 @@
 
 .s-id-github-btn,
 .s-id-google-btn,
-.s-id-twitter-btn {
+.s-id-twitter-btn,
+.s-id-facebook-btn {
     padding: 10px 30px;
     width: 60%;
     font-weight: bold;
@@ -91,6 +92,13 @@
     border: 0;
 }
 
+.s-id-facebook-btn {
+    background-color: #3B5998;
+    color: #fff;
+}
+.s-id-facebook-btn:hover {
+    background-color: #2D4475;
+}
 .s-id-github-btn {
     background-color: #F5F5F5;
 }

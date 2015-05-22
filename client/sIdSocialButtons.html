@@ -2,6 +2,11 @@
     {{#with sIdSocialBtns}}
         <div class="s-id-clearfix"></div>
         <div class="social-buttons-block">
+            {{#if facebook}}
+                <div>
+                    <button id="s-id-buttons-facebook" class="s-id-facebook-btn">{{facebookBtnLabel}}</button>
+                </div>
+            {{/if}}
             {{#if google}}
                 <div>
                     <button id="s-id-buttons-google" class="s-id-google-btn">{{googleBtnLabel}}</button>
