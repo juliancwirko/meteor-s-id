@@ -9,10 +9,12 @@ sId = {
         forgotPassForm: {},
         resetPassForm: {},
         socialButtons: {
+            'facebook': true,
             'github': true,
             'google': true,
             'twitter': true,
             'labels': {
+                'facebook': 'Facebook Access',
                 'github': 'GitHub Access',
                 'google': 'Google Access',
                 'twitter': 'Twitter Access'

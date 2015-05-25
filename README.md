@@ -126,17 +126,23 @@ Example (settings.json in your app root folder):
 
 ```
 {
-    "github": {
-        "clientId": "{your github API client id here}",
-        "secret": "{your google API secret key here}"
-    },
-    "google": {
-        "clientId": "{your google API client id here}",
-        "secret": "{your google API secret key here}"
-    },
-    "twitter": {
-        "consumerKey": "{your twitter API customer key here}",
-        "secret": "{your twitter API secret key here}"
+    "private": {
+        "github": {
+            "clientId": "{your github API client id here}",
+            "secret": "{your google API secret key here}"
+        },
+        "google": {
+            "clientId": "{your google API client id here}",
+            "secret": "{your google API secret key here}"
+        },
+        "twitter": {
+            "consumerKey": "{your twitter API customer key here}",
+            "secret": "{your twitter API secret key here}"
+        },
+        "facebook": {
+    		"appId": "{your facebook API app id here}",
+    		"secret": "{your facebook API secret key here}"
+    	}
     }
 }
 ```
@@ -146,6 +152,7 @@ You can generate your API keys on these sites:
 - [Google API](https://console.developers.google.com)
 - [Twitter API](https://apps.twitter.com/)
 - [GitHub API](https://github.com/settings/applications/)
+- [Facebook API](https://developers.facebook.com/apps)
 
 Then you should run your app with:
 `meteor --settings settings.json`
