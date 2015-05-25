@@ -1,21 +1,21 @@
 Package.describe({
   summary: 'Simple accounts for Meteor.',
-  version: '1.0.2',
+  version: '2.0.0',
   name: 'juliancwirko:s-id',
   git: 'https://github.com/juliancwirko/meteor-s-id.git'
 });
 
-Package.onUse(function(api) {
+Package.onUse(function (api) {
     api.use('templating@1.1.1');
     api.use('ui@1.0.6');
 
     api.use([
       'jquery@1.11.3_2',
-      'juliancwirko:s-alert@2.3.1'
+      'juliancwirko:s-alert@2.3.5'
     ], ['client']);
 
     api.imply([
-      'juliancwirko:s-alert@2.3.1'
+      'juliancwirko:s-alert@2.3.5'
     ], ['client']);
 
     api.use([
@@ -26,6 +26,7 @@ Package.onUse(function(api) {
       'accounts-github@1.0.4',
       'accounts-google@1.0.4',
       'accounts-twitter@1.0.4',
+      'accounts-facebook@1.0.4'
     ], ['client', 'server']);
 
     api.imply([
@@ -35,6 +36,7 @@ Package.onUse(function(api) {
       'accounts-github@1.0.4',
       'accounts-google@1.0.4',
       'accounts-twitter@1.0.4',
+      'accounts-facebook@1.0.4'
     ], ['client', 'server']);
 
     api.addFiles([
@@ -52,7 +54,7 @@ Package.onUse(function(api) {
     ], 'client');
 
     api.addFiles([
-      'common/s-id.js',
+      'common/s-id.js'
     ], ['client', 'server']);
 
     api.addFiles([

@@ -70,10 +70,12 @@ Meteor.startup(function () {
             'github': true,
             'google': true,
             'twitter': true,
+            'facebook': true,
             'labels': { // labels for social buttons
                 'github': 'GitHub Access',
                 'google': 'Google Access',
-                'twitter': 'Twitter Access'
+                'twitter': 'Twitter Access',
+                'facebook': 'Facebook Access'
             }
         },
         onLogged: function () {
@@ -193,8 +195,23 @@ Accounts.onCreateUser(function (options, user) {
         return user;
     }
 
+    if (user.services.facebook) {
+
+        user.username = user.services.facebook.email;
+        user.emails = [];
+        user.emails.push({
+            address: user.services.facebook.email,
+            verified: true
+        });
+
+        return user;
+    }
+
     if (user.services.twitter) {
-        // your transforms
+
+        user.username = user.services.twitter.screenName;
+        return user;
+
     }
 
     return user;
@@ -276,16 +293,10 @@ Basicaly you just use ready to go templates from the package and some callbacks 
 
 ### Changelog
 
+- v2.0.0 added Facebook service (thanks to [@yankeyhotel](https://github.com/yankeyhotel)), settings.json structure changed (see example above)
+
 - v1.0.2 fix forgot password link usage
 
 - v1.0.1 fix onLogged() callback with external services like Google etc.
 
 - v1.0.0 is not depended on Iron Router anymore. You should use templates and make your own routes (example above). You can use onLogged, onRegistered, onForgotPassword, onResetPassword callbacks in config to make (for example) redirections.
-
-
-### TODO
-
-- sign up email confirmation
-- loginWithMeteorDeveloperAccount
-- loginWithFacebook
-- form validation with alerts

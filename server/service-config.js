@@ -8,7 +8,7 @@ if (typeof Meteor.settings !== 'undefined' && !_.isEmpty(Meteor.settings)) {
     });
     ServiceConfiguration.configurations.insert({
         service: 'facebook',
-        clientId: Meteor.settings.private.facebook.clientId,
+        appId: Meteor.settings.private.facebook.appId,
         secret: Meteor.settings.private.facebook.secret
     });
 
