@@ -2,15 +2,15 @@
     <div class="{{sIdRegisterClass}}">
         <h2>{{sIdRegisterTitle}}</h2>
         <p>{{sIdRegisterLeadText}}</p>
-        <form id="register-form" action="action">
+        <form id="register-form" novalidate action="action">
             <div>
-                <input type="text" required id="s-id-register-username" placeholder="Username">
+                <input type="text" required id="s-id-register-username" placeholder="{{#if usernamePlaceholder}}{{usernamePlaceholder}}{{/if}}">
             </div>
             <div>
-                <input type="email" required id="s-id-register-email" placeholder="E-mail">
+                <input type="email" required id="s-id-register-email" placeholder="{{#if emailPlaceholder}}{{emailPlaceholder}}{{/if}}">
             </div>
             <div>
-                <input type="password" required id="s-id-register-password" placeholder="Password">
+                <input type="password" required id="s-id-register-password" placeholder="{{#if passwordPlaceholder}}{{passwordPlaceholder}}{{/if}}">
             </div>
             <div>
                 <button type="submit" id="s-id-register-button">{{sIdRegisterBtnLabel}}</button>

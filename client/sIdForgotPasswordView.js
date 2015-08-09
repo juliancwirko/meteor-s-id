@@ -19,11 +19,15 @@ Template.sIdForgotPasswordView.events({
     'submit #forgot-password-form': function (e, tmpl) {
         e.preventDefault();
         var email = tmpl.$('#s-id-forgot-password-email').val();
+        if (!sId.settings.validateEmail(email)) {
+            sId.settings.messages.validEmail && sAlert.error(sId.settings.messages.validEmail);
+            return;
+        }
         if (email) {
-            sAlert.info('Sending...');
+            sId.settings.messages.sending && sAlert.info(sId.settings.messages.sending);
             Accounts.forgotPassword({email: email}, function (err) {
                 if (err) {
-                    sAlert.error('Something went wrong! -' + err);
+                    sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err);
                 } else {
                     sId.settings.onForgotPassword();
                 }

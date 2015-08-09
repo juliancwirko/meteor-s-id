@@ -4,10 +4,10 @@ Template.sIdSocialButtons.events({
     'click #s-id-buttons-facebook': function (e) {
         e.preventDefault();
         Meteor.loginWithFacebook({
-            requestPermissions: ['public_profile,email']
+            requestPermissions: ['public_profile, email']
         }, function (err) {
             if (err) {
-                sAlert.error('Something went wrong! -' + err);
+                sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err);
             } else {
                 sId.settings.onLogged();
             }
@@ -19,7 +19,7 @@ Template.sIdSocialButtons.events({
             requestPermissions: ['user']
         }, function (err) {
             if (err) {
-                sAlert.error('Something went wrong! -' + err);
+                sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err);
             } else {
                 sId.settings.onLogged();
             }
@@ -34,7 +34,7 @@ Template.sIdSocialButtons.events({
             ]
         }, function (err) {
             if (err) {
-                sAlert.error('Something went wrong! -' + err);
+                sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err);
             } else {
                 sId.settings.onLogged();
             }
@@ -44,7 +44,7 @@ Template.sIdSocialButtons.events({
         e.preventDefault();
         Meteor.loginWithTwitter({}, function (err) {
             if (err) {
-                sAlert.error('Something went wrong! -' + err);
+                sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err);
             } else {
                 sId.settings.onLogged();
             }

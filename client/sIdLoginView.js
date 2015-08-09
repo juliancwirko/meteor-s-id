@@ -22,7 +22,7 @@ Template.sIdLoginView.events({
             password = tmpl.$('#s-id-login-password').val();
         Meteor.loginWithPassword(user, password, function (err) {
             if (err) {
-                sAlert.error('Something went wrong! -' + err);
+                sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err);
             } else {
                 sId.settings.onLogged();
             }

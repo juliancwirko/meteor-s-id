@@ -2,12 +2,12 @@
     <div class="{{sIdLoginClass}}">
         <h2>{{sIdLoginTitle}}</h2>
         <p>{{sIdLoginLeadText}}</p>
-        <form id="login-form" action="action">
+        <form id="login-form" novalidate action="action">
             <div>
-                <input type="text" required id="s-id-login-username" placeholder="Username">
+                <input type="text" required id="s-id-login-username" placeholder="{{#if usernamePlaceholder}}{{usernamePlaceholder}}{{/if}}">
             </div>
             <div>
-                <input type="password" required id="s-id-login-password" placeholder="Password">
+                <input type="password" required id="s-id-login-password" placeholder="{{#if passwordPlaceholder}}{{passwordPlaceholder}}{{/if}}">
             </div>
             <div>
                 <button type="submit" id="s-id-login-button">{{sIdLoginBtnLabel}}</button>

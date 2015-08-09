@@ -20,10 +20,14 @@ Template.sIdResetPasswordView.events({
         e.preventDefault();
         var password = tmpl.$('#s-id-reset-password-password').val(),
             token = sId.settings.getPasswordResetToken();
+        if (!sId.settings.validatePassword(password)) {
+            sId.settings.messages.validPassword && sAlert.error(sId.settings.messages.validPassword);
+            return;
+        }
         if (token && password) {
             Accounts.resetPassword(token, password, function (err) {
                 if (err) {
-                    sAlert.error('Something went wrong! -' + err);
+                    sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err);
                 } else {
                     sId.settings.onResetPassword();
                 }
