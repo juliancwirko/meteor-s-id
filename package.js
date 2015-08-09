@@ -1,42 +1,45 @@
 Package.describe({
-  summary: 'Simple accounts for Meteor.',
-  version: '3.0.0',
-  name: 'juliancwirko:s-id',
-  git: 'https://github.com/juliancwirko/meteor-s-id.git'
+    summary: 'Simple accounts for Meteor.',
+    version: '3.0.0',
+    name: 'juliancwirko:s-id',
+    git: 'https://github.com/juliancwirko/meteor-s-id.git'
 });
 
 Package.onUse(function (api) {
+
+    api.versionsFrom(['METEOR@1.1.0.3']);
+
     api.use('templating');
     api.use('ui');
 
     api.use([
-      'jquery',
-      'juliancwirko:s-alert@2.4.1'
+        'jquery',
+        'juliancwirko:s-alert@2.4.1'
     ], ['client']);
 
     api.imply([
-      'juliancwirko:s-alert@2.4.1'
+        'juliancwirko:s-alert@2.4.1'
     ], ['client']);
 
     api.use([
-      'underscore',
-      'accounts-base',
-      'service-configuration',
-      'accounts-password',
-      'accounts-github',
-      'accounts-google',
-      'accounts-twitter',
-      'accounts-facebook'
+        'underscore',
+        'accounts-base',
+        'service-configuration',
+        'accounts-password',
+        'accounts-github',
+        'accounts-google',
+        'accounts-twitter',
+        'accounts-facebook'
     ], ['client', 'server']);
 
     api.imply([
-      'accounts-base',
-      'service-configuration',
-      'accounts-password',
-      'accounts-github',
-      'accounts-google',
-      'accounts-twitter',
-      'accounts-facebook'
+        'accounts-base',
+        'service-configuration',
+        'accounts-password',
+        'accounts-github',
+        'accounts-google',
+        'accounts-twitter',
+        'accounts-facebook'
     ], ['client', 'server']);
 
     api.addFiles([
@@ -55,7 +58,7 @@ Package.onUse(function (api) {
     ], 'client');
 
     api.addFiles([
-      'common/s-id.js'
+        'common/s-id.js'
     ], ['client', 'server']);
 
     api.addFiles([
