@@ -341,6 +341,8 @@ Meteor.startup(function () {
 
 ### Changelog
 
+- v3.0.1 versions bump
+
 - v3.0.0 added email verification option, added messages config, added validators config, docs changes
 
 - v2.0.0 added Facebook service (thanks to [@yankeyhotel](https://github.com/yankeyhotel)), settings.json structure changed (see example above)
