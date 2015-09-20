@@ -5,6 +5,14 @@ Meteor.methods({
         check(username, String);
         check(email, String);
         check(password, String);
+
+        if (username === 'nousername' && sId.settings.validateEmail(email) && sId.settings.validatePassword(password)) {
+            return Accounts.createUser({
+                email: email,
+                password: password
+            });
+        }
+
         if (sId.settings.validateUsername(username) && sId.settings.validateEmail(email) && sId.settings.validatePassword(password)) {
             return Accounts.createUser({
                 username: username,

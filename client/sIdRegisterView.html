@@ -3,9 +3,11 @@
         <h2>{{sIdRegisterTitle}}</h2>
         <p>{{sIdRegisterLeadText}}</p>
         <form id="register-form" novalidate action="action">
-            <div>
-                <input type="text" required id="s-id-register-username" placeholder="{{#if usernamePlaceholder}}{{usernamePlaceholder}}{{/if}}">
-            </div>
+            {{#unless registerEmailFieldOnly}}
+                <div>
+                    <input type="text" required id="s-id-register-username" placeholder="{{#if usernamePlaceholder}}{{usernamePlaceholder}}{{/if}}">
+                </div>
+            {{/unless}}
             <div>
                 <input type="email" required id="s-id-register-email" placeholder="{{#if emailPlaceholder}}{{emailPlaceholder}}{{/if}}">
             </div>

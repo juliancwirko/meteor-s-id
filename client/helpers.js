@@ -2,6 +2,11 @@
 
 // global helpers
 
+// this is username or email
+Template.registerHelper('loginNamePlaceholder', function () {
+    return sId.settings.messages.loginNamePlaceholder;
+});
+
 Template.registerHelper('usernamePlaceholder', function () {
     return sId.settings.messages.usernamePlaceholder;
 });

@@ -21,6 +21,7 @@ sId = {
             }
         },
         emailVerification: true,
+        registerEmailFieldOnly: false,
         messages: {
             verifyEmail: 'Verify your e-mail address',
             verifiedEmail: 'Your email address was verified. Thanks!',
@@ -32,6 +33,7 @@ sId = {
             validPassword: 'Password should be at least one number, one lowercase and one uppercase letter and at least six characters!',
             validUsername: 'Username should be at least 3 characters long and max 12 characters!',
             // placeholders
+            loginNamePlaceholder: 'Username or E-mail',
             usernamePlaceholder: 'Username',
             passwordPlaceholder: 'Password',
             emailPlaceholder: 'E-mail',

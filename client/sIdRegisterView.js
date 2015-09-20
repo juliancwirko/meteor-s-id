@@ -20,6 +20,9 @@ Template.sIdRegisterView.helpers({
     },
     sIdRegisterBtnLabel: function () {
         return sId.settings.registerForm.submitBtnLabel || 'Register';
+    },
+    registerEmailFieldOnly: function () {
+        return sId.settings.registerEmailFieldOnly;
     }
 });
 
@@ -53,16 +56,22 @@ var createUserWithoutEmailVerification = function (username, email, password) {
 Template.sIdRegisterView.events({
     'submit #register-form': function (e, tmpl) {
         e.preventDefault();
-        var username = tmpl.$('#s-id-register-username').val(),
+        var username,
             email = tmpl.$('#s-id-register-email').val(),
             password = tmpl.$('#s-id-register-password').val();
+
+        if (sId.settings.registerEmailFieldOnly) {
+            username = 'nousername';
+        } else {
+            username = tmpl.$('#s-id-register-username').val();
+        }
 
         if (!username || !email || !password) {
             sId.settings.messages.fillAllFields && sAlert.error(sId.settings.messages.fillAllFields);
             return;
         }
 
-        if (!sId.settings.validateUsername(username)) {
+        if (!sId.settings.registerEmailFieldOnly && !sId.settings.validateUsername(username)) {
             sId.settings.messages.validUsername && sAlert.error(sId.settings.messages.validUsername);
             return;
         }
