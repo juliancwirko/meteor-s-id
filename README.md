@@ -14,6 +14,10 @@ This is a simple and custom Accounts system with config file. It is not dependan
 
 [s-id.meteor.com](http://s-id.meteor.com/)
 
+### Blog post about it
+
+[Meteor Accounts based on sId package](http://julian.io/meteor-accounts-based-on-sid-package/)
+
 ### Usage example in Scotty boilerplate
 
 - [config file](https://github.com/juliancwirko/scotty/blob/master/common/settings/users-accounts-config.js)
