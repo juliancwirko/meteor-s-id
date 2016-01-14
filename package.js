@@ -1,6 +1,6 @@
 Package.describe({
     summary: 'Simple accounts for Meteor.',
-    version: '3.1.0',
+    version: '3.1.1',
     name: 'juliancwirko:s-id',
     git: 'https://github.com/juliancwirko/meteor-s-id.git'
 });
@@ -14,11 +14,11 @@ Package.onUse(function (api) {
 
     api.use([
         'jquery',
-        'juliancwirko:s-alert@3.1.0'
+        'juliancwirko:s-alert@3.1.4'
     ], ['client']);
 
     api.imply([
-        'juliancwirko:s-alert@3.1.0'
+        'juliancwirko:s-alert@3.1.4'
     ], ['client']);
 
     api.use([

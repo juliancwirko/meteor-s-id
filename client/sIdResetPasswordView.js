@@ -27,7 +27,7 @@ Template.sIdResetPasswordView.events({
         if (token && password) {
             Accounts.resetPassword(token, password, function (err) {
                 if (err) {
-                    sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err);
+                    sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err.reason);
                 } else {
                     sId.settings.onResetPassword();
                 }

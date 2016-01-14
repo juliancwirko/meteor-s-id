@@ -35,7 +35,7 @@ var createUserWithEmailVerification = function (username, email, password) {
                 sId.settings.messages.verifyEmail && sAlert.success(sId.settings.messages.verifyEmail);
             });
         } else {
-            sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err);
+            sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err.reason);
         }
     });
 };
@@ -48,7 +48,7 @@ var createUserWithoutEmailVerification = function (username, email, password) {
                 sId.settings.messages.loginNow && sAlert.success(sId.settings.messages.loginNow);
             });
         } else {
-            sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err);
+            sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err.reason);
         }
     });
 }

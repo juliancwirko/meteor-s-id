@@ -354,6 +354,8 @@ Meteor.startup(function () {
 
 ### Changelog
 
+- v3.1.1 small improvements
+
 - v3.1.0 registerEmailFieldOnly option see: [#3](https://github.com/juliancwirko/meteor-s-id/issues/3)
 
 - v3.0.2 versions bump

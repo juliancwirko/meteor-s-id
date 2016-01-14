@@ -7,7 +7,7 @@ Template.sIdSocialButtons.events({
             requestPermissions: ['public_profile, email']
         }, function (err) {
             if (err) {
-                sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err);
+                sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err.reason);
             } else {
                 sId.settings.onLogged();
             }
@@ -19,7 +19,7 @@ Template.sIdSocialButtons.events({
             requestPermissions: ['user']
         }, function (err) {
             if (err) {
-                sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err);
+                sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err.reason);
             } else {
                 sId.settings.onLogged();
             }
@@ -34,7 +34,7 @@ Template.sIdSocialButtons.events({
             ]
         }, function (err) {
             if (err) {
-                sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err);
+                sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err.reason);
             } else {
                 sId.settings.onLogged();
             }
@@ -44,7 +44,7 @@ Template.sIdSocialButtons.events({
         e.preventDefault();
         Meteor.loginWithTwitter({}, function (err) {
             if (err) {
-                sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err);
+                sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err.reason);
             } else {
                 sId.settings.onLogged();
             }

@@ -27,7 +27,7 @@ Template.sIdForgotPasswordView.events({
             sId.settings.messages.sending && sAlert.info(sId.settings.messages.sending);
             Accounts.forgotPassword({email: email}, function (err) {
                 if (err) {
-                    sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err);
+                    sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err.reason);
                 } else {
                     sId.settings.onForgotPassword();
                 }
