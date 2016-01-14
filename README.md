@@ -324,6 +324,12 @@ Accounts.onCreateUser(function (options, user) {
 });
 ```
 
+### Form Validation Alerts
+
+This package uses another Meteor package called `juliancwirko:s-alert`. You don't need to install it, but you might want to see how to configure it. You'll find the documentation here: [s-alert.meteor.com](http://s-alert.meteor.com).
+
+If you don't want to configure it just place `{{> sAlert}}` template in your main template in the app.
+
 ### Styling
 
 There will be more customization in the future. For now you can use `mainClass` (sId config) as a namespace for DOM elements which has its own ids and classes. As you can see if you provide your own css class in the config you will get simple unstyled template.
