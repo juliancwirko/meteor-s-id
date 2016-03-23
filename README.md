@@ -8,11 +8,11 @@ This is a simple and custom Accounts system with config file. It is not dependan
 
 (With minimal styling, but you can do this very simple by adding your own css classes)
 
-[s-id-demo.meteor.com](http://s-id-demo.meteor.com/)
+[s-id-demo.meteorapp.com](http://s-id-demo.meteorapp.com/)
 
 ### Website:
 
-[s-id.meteor.com](http://s-id.meteor.com/)
+[s-id.meteorapp.com](http://s-id.meteorapp.com/)
 
 ### Blog post about it
 
@@ -263,8 +263,6 @@ You can generate your API keys on these sites:
 
 Then you should run your app with:
 `meteor --settings settings.json`
-and you can also deploy it with:
-`meteor deploy --settings settings.json your-app.meteor.com`
 
 You will find more in Meteor Docs.
 
@@ -326,7 +324,7 @@ Accounts.onCreateUser(function (options, user) {
 
 ### Form Validation Alerts
 
-This package uses another Meteor package called `juliancwirko:s-alert`. You don't need to install it, but you might want to see how to configure it. You'll find the documentation here: [s-alert.meteor.com](http://s-alert.meteor.com).
+This package uses another Meteor package called `juliancwirko:s-alert`. You don't need to install it, but you might want to see how to configure it. You'll find the documentation here: [s-alert.meteorapp.com](http://s-alert.meteorapp.com).
 
 If you don't want to configure it just place `{{> sAlert}}` template in your main template in the app.
 
@@ -336,13 +334,13 @@ There will be more customization in the future. For now you can use `mainClass` 
 
 You can take the package style.css file as a reference.
 
-It is also integrated with [s-alert](http://s-alert.meteor.com) notifications
+It is also integrated with [s-alert](http://s-alert.meteorapp.com) notifications
 
 If you want you can play with excelent package for overwriting templates: [aldeed:template-extension](https://atmospherejs.com/aldeed/template-extension)
 
 ### Sending Emails
 
-You can configure Mailgun with Meteor. It is very simple. If you will deploy on meteor.com there should be Mailgun configured so you don't have to do anything.
+You can configure Mailgun with Meteor.
 
 Example:
 
@@ -355,19 +353,11 @@ Meteor.startup(function () {
 ### Changelog
 
 - v3.1.1 small improvements
-
 - v3.1.0 registerEmailFieldOnly option see: [#3](https://github.com/juliancwirko/meteor-s-id/issues/3)
-
 - v3.0.2 versions bump
-
 - v3.0.1 versions bump
-
 - v3.0.0 added email verification option, added messages config, added validators config, docs changes
-
 - v2.0.0 added Facebook service (thanks to [@yankeyhotel](https://github.com/yankeyhotel)), settings.json structure changed (see example above)
-
 - v1.0.2 fix forgot password link usage
-
 - v1.0.1 fix onLogged() callback with external services like Google etc.
-
 - v1.0.0 is not depended on Iron Router anymore. You should use templates and make your own routes (example above). You can use onLogged, onRegistered, onForgotPassword, onResetPassword callbacks in config to make (for example) redirections.
