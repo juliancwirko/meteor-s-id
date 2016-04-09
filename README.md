@@ -80,6 +80,8 @@ Meteor.startup(function () {
         emailVerification: true,
         // change it to 'true' if you need only e-mail field on register form (default there is username and e-mail)
         registerEmailFieldOnly: false,
+        // you can turn on and off autologin after user creation - in default turned on
+        autoLoginAfterRegistration: true,
         // you can pass empty messages object to turn it off
         messages: {
             verifyEmail: 'Verify your e-mail address',
@@ -350,8 +352,17 @@ Meteor.startup(function () {
 });
 ```
 
+### Apps using it:
+
+- [SimpleChat.Support - Open Source Live Chat](https://www.simplechat.support)
+- [ReleCheck - Track your favourite app's updates](http://www.relecheck.com)
+
+Let me know if you want you app listed here ;)
+
+
 ### Changelog
 
+- v3.1.2 new option `autoLoginAfterRegistration` [#4](https://github.com/juliancwirko/meteor-s-id/issues/4)
 - v3.1.1 small improvements
 - v3.1.0 registerEmailFieldOnly option see: [#3](https://github.com/juliancwirko/meteor-s-id/issues/3)
 - v3.0.2 versions bump

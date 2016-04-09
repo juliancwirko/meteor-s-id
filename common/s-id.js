@@ -22,6 +22,7 @@ sId = {
         },
         emailVerification: true,
         registerEmailFieldOnly: false,
+        autoLoginAfterRegistration: true,
         messages: {
             verifyEmail: 'Verify your e-mail address',
             verifiedEmail: 'Your email address was verified. Thanks!',

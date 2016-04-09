@@ -26,32 +26,28 @@ Template.sIdRegisterView.helpers({
     }
 });
 
-var createUserWithEmailVerification = function (username, email, password) {
+var createUser = function (username, email, password, type) {
     Meteor.call('createNewUser', username, email, password, function (err, result) {
         if (!err) {
             sId.settings.onRegistered();
-            Meteor.call('emailVerification', result);
+            if (type === 'withEmailVerification') {
+                Meteor.call('emailVerification', result);
+            }
+            if (sId.settings.autoLoginAfterRegistration) {
+                Meteor.loginWithPassword(email, password);
+            }
             Meteor.defer(function () {
-                sId.settings.messages.verifyEmail && sAlert.success(sId.settings.messages.verifyEmail);
+                if (type === 'withEmailVerification') {
+                    sId.settings.messages.verifyEmail && sAlert.success(sId.settings.messages.verifyEmail);
+                } else {
+                    sId.settings.messages.loginNow && sAlert.success(sId.settings.messages.loginNow);
+                }
             });
         } else {
             sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err.reason);
         }
     });
 };
-
-var createUserWithoutEmailVerification = function (username, email, password) {
-    Meteor.call('createNewUser', username, email, password, function (err, result) {
-        if (!err) {
-            sId.settings.onRegistered();
-            Meteor.defer(function () {
-                sId.settings.messages.loginNow && sAlert.success(sId.settings.messages.loginNow);
-            });
-        } else {
-            sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err.reason);
-        }
-    });
-}
 
 Template.sIdRegisterView.events({
     'submit #register-form': function (e, tmpl) {
@@ -83,9 +79,9 @@ Template.sIdRegisterView.events({
 
         if (sId.settings.validatePassword(password)) {
             if (sId.settings.emailVerification) {
-                createUserWithEmailVerification(username, email, password);
+                createUser(username, email, password, 'withEmailVerification');
             } else {
-                createUserWithoutEmailVerification(username, email, password);
+                createUser(username, email, password);
             }
         } else {
             sId.settings.messages.validPassword && sAlert.error(sId.settings.messages.validPassword);

@@ -1,6 +1,6 @@
 Package.describe({
-    summary: 'Simple accounts for Meteor.',
-    version: '3.1.1',
+    summary: 'Simple user accounts for Meteor.',
+    version: '3.1.2',
     name: 'juliancwirko:s-id',
     git: 'https://github.com/juliancwirko/meteor-s-id.git'
 });
