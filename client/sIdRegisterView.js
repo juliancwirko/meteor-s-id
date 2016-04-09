@@ -26,23 +26,30 @@ Template.sIdRegisterView.helpers({
     }
 });
 
+var afterCreateUser = function (result, type) {
+    sId.settings.onRegistered();
+    if (type === 'withEmailVerification') {
+        Meteor.call('emailVerification', result);
+    }
+    Meteor.defer(function () {
+        if (type === 'withEmailVerification') {
+            sId.settings.messages.verifyEmail && sAlert.success(sId.settings.messages.verifyEmail);
+        } else {
+            sId.settings.messages.loginNow && sAlert.success(sId.settings.messages.loginNow);
+        }
+    });
+};
+
 var createUser = function (username, email, password, type) {
     Meteor.call('createNewUser', username, email, password, function (err, result) {
-        if (!err) {
-            sId.settings.onRegistered();
-            if (type === 'withEmailVerification') {
-                Meteor.call('emailVerification', result);
-            }
-            if (sId.settings.autoLoginAfterRegistration) {
-                Meteor.loginWithPassword(email, password);
-            }
-            Meteor.defer(function () {
-                if (type === 'withEmailVerification') {
-                    sId.settings.messages.verifyEmail && sAlert.success(sId.settings.messages.verifyEmail);
-                } else {
-                    sId.settings.messages.loginNow && sAlert.success(sId.settings.messages.loginNow);
+        if (!err && sId.settings.autoLoginAfterRegistration) {
+            Meteor.loginWithPassword(email, password, function (err) {
+                if (!err) {
+                    afterCreateUser(result, type);
                 }
             });
+        } else if (!err) {
+            afterCreateUser(result, type);
         } else {
             sId.settings.messages.somethingWrong && sAlert.error(sId.settings.messages.somethingWrong + err.reason);
         }
