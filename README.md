@@ -362,7 +362,7 @@ Let me know if you want you app listed here ;)
 
 ### Changelog
 
-- v3.1.2 new option `autoLoginAfterRegistration` [#4](https://github.com/juliancwirko/meteor-s-id/issues/4)
+- v3.1.2 - v3.1.3 new option `autoLoginAfterRegistration` [#4](https://github.com/juliancwirko/meteor-s-id/issues/4)
 - v3.1.1 small improvements
 - v3.1.0 registerEmailFieldOnly option see: [#3](https://github.com/juliancwirko/meteor-s-id/issues/3)
 - v3.0.2 versions bump
