@@ -1,80 +1,139 @@
+.s-id-clearfix:before,
+.s-id-clearfix:after {
+    content: " ";
+    display: table;
+}
+.s-id-clearfix:before {
+    clear: both;
+}
+
 .s-id-register-form,
 .s-id-login-form,
-.s-id-reset-password-form,
-.s-id-forgot-password-form {
-    width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 50px;
-    background: #fff;
-    padding: 30px 50px 60px;
-    border-radius: 3px;
-    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+.s-id-forgot-password-form,
+.s-id-reset-password-form {
+  margin: 50px auto;
+  max-width: 400px;
+  width: 95%;
+  padding: 40px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 5px 20px rgba(0,0,0,0.05), 0 15px 30px -10px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05), 0 15px 30px -10px rgba(0,0,0,0.3);
+}
+.s-id-register-form .s-id-main-header,
+.s-id-login-form .s-id-main-header,
+.s-id-forgot-password-form .s-id-main-header,
+.s-id-reset-password-form .s-id-main-header {
+  font-weight: 300;
+  font-size: 36px;
+  margin-bottom: 45px;
+  text-align: center;
 }
 
+.s-id-register-form .s-id-lead-text,
+.s-id-login-form .s-id-lead-text,
+.s-id-forgot-password-form .s-id-lead-text,
+.s-id-reset-password-form .s-id-lead-text {
+  font-weight: 300;
+}
+
+.s-id-register-form form,
+.s-id-login-form form,
+.s-id-forgot-password-form form,
+.s-id-reset-password-form form,
 .s-id-register-form input,
 .s-id-login-form input,
+.s-id-forgot-password-form input,
 .s-id-reset-password-form input,
-.s-id-forgot-password-form input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #cdcdcd;
-    margin-bottom: 5px;
-    outline: none;
-    -webkit-transition: border .3s;
-    transition: border .3s;
+.s-id-register-form button,
+.s-id-login-form button,
+.s-id-forgot-password-form button,
+.s-id-reset-password-form button {
+  width: 100%;
 }
 
-.s-id-register-form input:focus,
-.s-id-login-form input:focus,
-.s-id-reset-password-form input:focus,
-.s-id-forgot-password-form input:focus {
-    border-left: 8px solid #cdcdcd;
-    outline: none;
+.s-id-register-form button,
+.s-id-login-form button,
+.s-id-forgot-password-form button,
+.s-id-reset-password-form button,
+.s-id-register-form input[type=text],
+.s-id-login-form input[type=text],
+.s-id-forgot-password-form input[type=text],
+.s-id-reset-password-form input[type=text],
+.s-id-register-form input[type=password],
+.s-id-login-form input[type=password],
+.s-id-forgot-password-form input[type=password],
+.s-id-reset-password-form input[type=password],
+.s-id-register-form input[type=email],
+.s-id-login-form input[type=email],
+.s-id-forgot-password-form input[type=email],
+.s-id-reset-password-form input[type=email] {
+  text-transform: initial;
+  padding: 15px 30px;
+  font-weight: 400;
 }
 
-.s-id-register-form h2,
-.s-id-login-form h2,
-.s-id-reset-password-form h2,
-.s-id-forgot-password-form h2 {
-    margin-top: 15px;
-    font-size: 36px;
+.s-id-register-form input[type=text],
+.s-id-login-form input[type=text],
+.s-id-forgot-password-form input[type=text],
+.s-id-reset-password-form input[type=text],
+.s-id-register-form input[type=password],
+.s-id-login-form input[type=password],
+.s-id-forgot-password-form input[type=password],
+.s-id-reset-password-form input[type=password],
+.s-id-register-form input[type=email],
+.s-id-login-form input[type=email],
+.s-id-forgot-password-form input[type=email],
+.s-id-reset-password-form input[type=email] {
+  border: 1px solid #f2f2f2;
+  margin-bottom: 5px;
+  outline: none;
 }
 
-.s-id-register-form button[type=submit],
-.s-id-login-form button[type=submit],
-.s-id-reset-password-form button[type=submit],
-.s-id-forgot-password-form button[type=submit] {
-    padding: 10px 30px;
-    background-color: #54B66A;
-    color: #fff;
-    text-transform: uppercase;
-    border: 0;
-    font-weight: bold;
-    -webkit-transition: background-color .5s;
-    transition: background-color .5s;
-    cursor: pointer;
-    width: 60%;
-    display: block;
-    margin-top: 35px;
-    margin-left: auto;
-    margin-right: auto;
+.s-id-register-form #s-id-login-button,
+.s-id-login-form #s-id-login-button,
+.s-id-forgot-password-form #s-id-login-button,
+.s-id-reset-password-form #s-id-login-button,
+.s-id-register-form #s-id-register-button,
+.s-id-login-form #s-id-register-button,
+.s-id-forgot-password-form #s-id-register-button,
+.s-id-reset-password-form #s-id-register-button,
+.s-id-register-form #s-id-forgot-password-button,
+.s-id-login-form #s-id-forgot-password-button,
+.s-id-forgot-password-form #s-id-forgot-password-button,
+.s-id-reset-password-form #s-id-forgot-password-button,
+.s-id-register-form #s-id-reset-password-button,
+.s-id-login-form #s-id-reset-password-button,
+.s-id-forgot-password-form #s-id-reset-password-button,
+.s-id-reset-password-form #s-id-reset-password-button {
+  background-color: #fff;
+  color: #25232d;
+  margin-bottom: 20px;
+  border: 2px solid #25232d;
+  border-radius: 2px;
+  transition: background-color 0.3s, color 0.3s;
+  cursor: pointer;
+  font-size: 14px;
+  outline: none;
 }
 
-.s-id-register-form button[type=submit]:hover,
-.s-id-login-form button[type=submit]:hover,
-.s-id-reset-password-form button[type=submit]:hover,
-.s-id-forgot-password-form button[type=submit]:hover{
-    background-color: #4aa15e;
-}
-
-.s-id-register-form .social-buttons-block,
-.s-id-login-form .social-buttons-block,
-.s-id-reset-password-form .social-buttons-block,
-.s-id-forgot-password-form .social-buttons-block{
-    margin-top: 35px;
-    text-align: center;
+.s-id-register-form #s-id-login-button:hover,
+.s-id-login-form #s-id-login-button:hover,
+.s-id-forgot-password-form #s-id-login-button:hover,
+.s-id-reset-password-form #s-id-login-button:hover,
+.s-id-register-form #s-id-register-button:hover,
+.s-id-login-form #s-id-register-button:hover,
+.s-id-forgot-password-form #s-id-register-button:hover,
+.s-id-reset-password-form #s-id-register-button:hover,
+.s-id-register-form #s-id-forgot-password-button:hover,
+.s-id-login-form #s-id-forgot-password-button:hover,
+.s-id-forgot-password-form #s-id-forgot-password-button:hover,
+.s-id-reset-password-form #s-id-forgot-password-button:hover,
+.s-id-register-form #s-id-reset-password-button:hover,
+.s-id-login-form #s-id-reset-password-button:hover,
+.s-id-forgot-password-form #s-id-reset-password-button:hover,
+.s-id-reset-password-form #s-id-reset-password-button:hover {
+  background-color: #25232d;
+  color: #fff;
 }
 
 .s-id-github-btn,
@@ -90,6 +149,7 @@
     transition: background-color .5s;
     margin-bottom: 5px;
     border: 0;
+    font-size: 14px;
 }
 
 .s-id-facebook-btn {
@@ -126,14 +186,4 @@
 .s-id-req-new-pass-link-container a {
     color: #424242;
     font-size: 13px;
-}
-
-
-.s-id-clearfix:before,
-.s-id-clearfix:after {
-    content: " ";
-    display: table;
-}
-.s-id-clearfix:before {
-    clear: both;
 }
