@@ -4,6 +4,9 @@
 
 // this is username or email
 Template.registerHelper('loginNamePlaceholder', function () {
+    if (sId.settings.registerEmailFieldOnly) {
+        return sId.settings.messages.loginNamePlaceholderEmailOnly;
+    }
     return sId.settings.messages.loginNamePlaceholder;
 });
 

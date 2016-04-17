@@ -35,6 +35,7 @@ sId = {
             validUsername: 'Username should be at least 3 characters long and max 12 characters!',
             // placeholders
             loginNamePlaceholder: 'Username or E-mail',
+            loginNamePlaceholderEmailOnly: 'E-mail',
             usernamePlaceholder: 'Username',
             passwordPlaceholder: 'Password',
             emailPlaceholder: 'E-mail',

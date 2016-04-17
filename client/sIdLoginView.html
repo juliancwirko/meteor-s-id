@@ -4,7 +4,7 @@
         <p class="s-id-lead-text">{{sIdLoginLeadText}}</p>
         <form id="login-form" novalidate action="action">
             <div>
-                <input type="text" required id="s-id-login-username" placeholder="{{#if loginNamePlaceholder}}{{loginNamePlaceholder}}{{/if}}">
+                <input type="{{#if registerEmailFieldOnly}}email{{else}}text{{/if}}" required id="s-id-login-username" placeholder="{{#if loginNamePlaceholder}}{{loginNamePlaceholder}}{{/if}}">
             </div>
             <div>
                 <input type="password" required id="s-id-login-password" placeholder="{{#if passwordPlaceholder}}{{passwordPlaceholder}}{{/if}}">

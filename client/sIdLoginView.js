@@ -12,6 +12,9 @@ Template.sIdLoginView.helpers({
     },
     sIdLoginBtnLabel: function () {
         return sId.settings.loginForm.submitBtnLabel || 'Login';
+    },
+    registerEmailFieldOnly: function () {
+        return sId.settings.registerEmailFieldOnly;
     }
 });
 

@@ -94,6 +94,7 @@ Meteor.startup(function () {
             validPassword: 'Password should be at least one number, one lowercase and one uppercase letter and at least six characters!',
             validUsername: 'Username should be at least 3 characters long and max 12 characters!',
             // placeholders
+            loginNamePlaceholderEmailOnly: 'E-mail',
             loginNamePlaceholder: 'Username or E-mail',
             usernamePlaceholder: 'Username',
             passwordPlaceholder: 'Password',
@@ -362,6 +363,7 @@ Let me know if you want you app listed here ;)
 
 ### Changelog
 
+- v3.2.1 - login username e-mail type [#5](https://github.com/juliancwirko/meteor-s-id/issues/5)
 - v3.2.0 - changed default styles
 - v3.1.2 - v3.1.3 new option `autoLoginAfterRegistration` [#4](https://github.com/juliancwirko/meteor-s-id/issues/4)
 - v3.1.1 small improvements
